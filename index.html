@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design Example</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Welcome to Our Responsive Site!</h1>
+        <p>Adapting to every screen, big or small.</p>
+        <button id="nav-toggle" class="nav-toggle">Menu</button>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <section id="about" class="column">
+            <h2>About Our Mission</h2>
+            <p>
+                We believe in creating accessible and beautiful web experiences for everyone,
+                regardless of the device they use. Our goal is to provide seamless
+                interaction and information delivery across desktops, tablets, and mobile phones.
+            </p>
+            <img src="https://placehold.co/600x400/81e6d9/000000?text=Responsive+Design" alt="Abstract image representing responsive design">
+            <p>
+                This example demonstrates how a flexible layout, combined with strategic
+                media queries, can transform a multi-column desktop view into a clean,
+                single-column mobile experience. Notice how elements stack naturally.
+            </p>
+        </section>
+
+        <section id="services" class="column">
+            <h2>Our Services</h2>
+            <p>
+                From web development to UI/UX design, we offer a range of services tailored
+                to meet your digital needs. Our focus is always on user experience and
+                performance.
+            </p>
+            <ul>
+                <li>Web Development (Front-end & Back-end)</li>
+                <li>Mobile-First UI/UX Design</li>
+                <li>Content Management Systems</li>
+                <li>Performance Optimization</li>
+                <li>SEO & Digital Marketing</li>
+            </ul>
+            <img src="https://placehold.co/600x350/a78bfa/ffffff?text=Mobile+Friendly" alt="Abstract image representing mobile-friendly development">
+            <p>
+                Testing with Chrome DevTools is crucial! It allows you to simulate various
+                device sizes and orientations, helping you pinpoint and fix any layout issues
+                before deployment.
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Responsive Web Page. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

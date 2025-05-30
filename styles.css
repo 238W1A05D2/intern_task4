@@ -1,0 +1,224 @@
+/* Base styles for the entire page */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8; /* Light background */
+    color: #334155; /* Dark gray text */
+    line-height: 1.6;
+}
+
+/* Header styling */
+.header {
+    background-color: #1e293b; /* Dark blue-gray */
+    color: #f8fafc; /* Off-white text */
+    padding: 1.5rem 1rem;
+    text-align: center;
+    border-bottom-left-radius: 1rem; /* Rounded corners */
+    border-bottom-right-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative; /* Needed for positioning the toggle button */
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Navigation styling */
+.nav {
+    background-color: #334155; /* Slightly lighter dark blue-gray */
+    padding: 0.75rem 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 0.75rem; /* Rounded corners */
+    margin: 1rem;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Horizontal navigation for desktop */
+    justify-content: center;
+    gap: 1.5rem; /* Space between nav items */
+    flex-wrap: wrap; /* Allow items to wrap if space is tight */
+}
+
+.nav a {
+    color: #cbd5e1; /* Light gray text */
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav a:hover, .nav a:focus {
+    background-color: #475569; /* Darker gray on hover */
+    color: #f8fafc;
+}
+
+/* Main content layout */
+.main-content {
+    display: flex; /* Two columns for desktop */
+    gap: 2rem; /* Space between columns */
+    padding: 2rem 1rem;
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto; /* Center the content */
+}
+
+.column {
+    flex: 1; /* Each column takes equal space */
+    background-color: #ffffff; /* White background for columns */
+    padding: 2rem;
+    border-radius: 1rem; /* Rounded corners */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    display: flex; /* Use flex for content within columns */
+    flex-direction: column; /* Stack content vertically within columns */
+    gap: 1rem;
+}
+
+.column h2 {
+    color: #1e293b;
+    font-size: 1.75rem;
+    margin-top: 0;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+
+.column p {
+    margin-bottom: 1rem;
+}
+
+/* Image styling: ensure images scale within their containers */
+.column img {
+    max-width: 100%; /* Images won't overflow their parent */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 0.75rem; /* Rounded corners for images */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer styling */
+.footer {
+    background-color: #1e293b;
+    color: #f8fafc;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/*
+ * MEDIA QUERIES FOR RESPONSIVE DESIGN
+ *
+ * This is where the magic happens for mobile-friendliness!
+ * We're targeting screens with a maximum width of 768px (common for tablets and smaller).
+ */
+
+/* Styles for the mobile navigation toggle button */
+.nav-toggle {
+    display: none; /* Hidden by default on desktop */
+    background-color: #475569;
+    color: #f8fafc;
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 1rem; /* Space from header content */
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-toggle:hover {
+    background-color: #334155;
+}
+
+
+@media (max-width: 768px) {
+    /* Adjust header font size for smaller screens */
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    /* Show the toggle button on mobile */
+    .nav-toggle {
+        display: block; /* Show the button */
+    }
+
+    /* Navigation: Adjust container for mobile */
+    .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem 1rem; /* Adjust padding */
+    }
+
+    /* Hide the navigation links by default on mobile */
+    .nav ul {
+        flex-direction: column; /* Change to vertical stacking */
+        align-items: center; /* Center items in the column */
+        gap: 0.5rem; /* Reduce gap for vertical stacking */
+        display: none; /* Hide the menu by default on mobile */
+        width: 100%;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    /* When 'nav-open' class is added by JavaScript, display the menu */
+    .nav.nav-open ul {
+        display: flex; /* Show the menu when 'nav-open' is active */
+    }
+
+    /* Main content: Stack columns vertically */
+    .main-content {
+        flex-direction: column; /* Change to vertical stacking */
+        padding: 1.5rem 1rem; /* Adjust padding */
+        gap: 1.5rem; /* Adjust gap between stacked columns */
+    }
+
+    /* Column styling for smaller screens */
+    .column {
+        padding: 1.5rem; /* Reduce padding inside columns */
+        border-radius: 0.75rem; /* Slightly smaller rounded corners */
+    }
+
+    .column h2 {
+        font-size: 1.5rem; /* Reduce heading font size */
+    }
+
+    .column p {
+        font-size: 0.95rem; /* Slightly reduce paragraph font size */
+    }
+}
+
+/* Further adjustments for very small screens (e.g., mobile phones) */
+@media (max-width: 480px) {
+    .header {
+        padding: 1rem 0.75rem;
+    }
+
+    .header h1 {
+        font-size: 1.75rem;
+    }
+
+    .nav {
+        margin: 0.75rem;
+    }
+
+    .main-content {
+        padding: 1rem 0.75rem;
+    }
+
+    .column {
+        padding: 1rem;
+    }
+
+    .column h2 {
+        font-size: 1.3rem;
+    }
+}
